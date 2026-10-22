@@ -31,7 +31,7 @@ jobs:
         run: pip install requests
 
       - name: Execute Farm Script
-        run: python3 jio_gemini_farm.py --target ${{ github.event.inputs.target_links }} --sweep 60
+        run: python3 jio_gemini_farm.py --target ${{ github.event.inputs.target_links || '10' }} --sweep 60
 
       - name: Check Results
         id: check
